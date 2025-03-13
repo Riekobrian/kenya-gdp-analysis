@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kenya-gdp-data
+data:
+  GDP2.csv: |
+    Year,Nominal GDP (Ksh Million),Annual GDP Growth (%),Real GDP (Ksh Million)
+    1960,5900,,
+    1961,6200,3.8,
+    1962,6600,9.2,
+    # Add the rest of your CSV data here
