@@ -8,4 +8,17 @@ spec:
   ports:
   - port: 80
     targetPort: 8501
-  type: LoadBalancer
+    nodePort: 30081  # Port range: 30000-32767
+  type: NodePort
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: kenya-gdp-app
+# spec:
+#   selector:
+#     app: kenya-gdp-app
+#   ports:
+#   - port: 80
+#     targetPort: 8501
+#   type: LoadBalancer
