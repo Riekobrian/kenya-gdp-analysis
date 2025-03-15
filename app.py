@@ -8,6 +8,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import sys
 import io
+import os
 
 # Set page configuration
 st.set_page_config(
@@ -128,17 +129,24 @@ page = st.sidebar.radio(
 )
 
 
+
 # Function to load data
 @st.cache_data
 def load_data():
     try:
-        data = pd.read_csv(
-            r"C:\Users\Ricky\Desktop\For Fun Projects\kenya-gdp-analysis\data\Kenya_GDP_Complete.csv"
-        )
+        # Ensure compatibility with both Windows and Linux
+        file_path = os.path.join(os.getcwd(), "data", "Kenya_GDP_Complete.csv")
+
+        # Debugging: Print the resolved file path
+        print(f"Loading data from: {file_path}")
+
+        # Load CSV
+        data = pd.read_csv(file_path)
         return data
     except Exception as e:
         st.error(f"Error loading data: {e}")
         return None
+
 
 
 # Load data
