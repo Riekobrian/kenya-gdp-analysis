@@ -3,7 +3,7 @@ name: Kenya GDP App CI/CD
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, linux-test ]
   pull_request:
     branches: [ main ]
 
